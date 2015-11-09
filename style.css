@@ -1,0 +1,61 @@
+#outer-circle {
+	background: red;
+	border-radius: 50%;
+	height: 600px;
+	width: 600px;
+	position: relative;
+}
+
+#inner-circle {
+	position: absolute;
+	background: black;
+	border-radius: 50%;
+	height: 200px;
+	width: 200px;
+	top: 57%;
+	left: 57%;
+	margin: -150px 0px 0px -150px;
+
+}
+
+#green-box {
+	
+	width: 300px;
+    height: 600px;
+    background: green;
+    vertical-align: bottom;
+    
+
+}
+
+#red-box {
+	width: 120px;
+    height: 120px;
+    background: red;
+    
+}
+
+#yellow-box {
+	width: 300px;
+    height: 290px;
+    background: yellow;
+    
+}
+
+#blue-box {
+	width: 300px;
+    height: 290px;
+    background: blue;
+    margin-left: 300px;
+}
+
+.button {
+	width: 100px;
+	height: 100px;
+	color: white;
+	margin-left: 45px;
+	margin-top: 50px;
+	font-size: 30px;
+	background-color: black;
+}
+
