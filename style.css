@@ -1,60 +1,59 @@
-#outer-circle {
-	background: red;
-	border-radius: 50%;
-	height: 600px;
-	width: 600px;
-	position: relative;
+body {
+	background-color: orange;
 }
 
-#inner-circle {
-	position: absolute;
-	background: black;
-	border-radius: 50%;
-	height: 200px;
-	width: 200px;
-	top: 57%;
-	left: 57%;
-	margin: -150px 0px 0px -150px;
-
+h1 {
+	text-align: center;
 }
+
+h1 span {
+	background-color: black;
+	color: yellow;
+	border-style: solid;
+	border-color: white;
+}
+
 
 #green-box {
 	
-	width: 300px;
-    height: 600px;
+	width: 120px;
+    height: 120px;
     background: green;
-    vertical-align: bottom;
-    
-
+    border-color: white;
+    border-style: solid
 }
 
 #red-box {
 	width: 120px;
     height: 120px;
     background: red;
+    border-color: white;
+    border-style: solid
     
 }
 
 #yellow-box {
-	width: 300px;
-    height: 290px;
+	width: 120px;
+    height: 120px;
     background: yellow;
+    border-color: white;
+    border-style: solid
     
 }
 
 #blue-box {
-	width: 300px;
-    height: 290px;
+	width: 120px;
+    height: 120px;
     background: blue;
-    margin-left: 300px;
+    border-color: white;
+    border-style: solid
+    
 }
 
-.button {
-	width: 100px;
-	height: 100px;
+#button {
+	width: 120px;
+	height: 120px;
 	color: white;
-	margin-left: 45px;
-	margin-top: 50px;
 	font-size: 30px;
 	background-color: black;
 }

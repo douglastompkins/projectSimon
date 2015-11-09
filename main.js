@@ -1,11 +1,15 @@
 console.log('main.js is linked!');
-var redSquare = document.querySelector('.red-box');
-var blueSquare = document.querySelector('.blue-box');
-var yellowSquare = document.querySelector('.yellow-box');
-var greenSquare = document.querySelector('.green-box');
-var startButton = document.querySelector('.button');
+var redSquare = document.getElementById('red-box');
+var blueSquare = document.getElementById('blue-box');
+var yellowSquare = document.getElementById('yellow-box');
+var greenSquare = document.getElementById('green-box');
+var startButton = document.getElementById('start-button');
 
 var simonColors = [redSquare, blueSquare, yellowSquare, greenSquare];
+
+var flashColor = function() {
+	setTimeout(userMoves())
+}
 
 // var gameMoves = {
 // 	moves: [],
@@ -41,36 +45,65 @@ compareMoves = function(); {
 
 };
 
+var userInteraction = function(); {
+	if (redSquare.addEventListener('click', redSquare === true)
+		return userMoves.push(redSquare);
+	} else if (greenSquare.addEventListener('click', greenSquare === true) {
+		return userMoves.push(greenSquare);
+	} else if (yellowSquare.addEventListener('click', yellowSquare === true) {
+		return userMoves.push(yellowSquare);
+	} else if (blueSquare.addEventListener('click', blueSquare === true) {
+		return userMoves.push(blueSquare);
+	}
+};
 
-var gamePlayStart = function() {
-	if (randomColor == true)
-		return computerMoves.push
 
+
+
+
+
+
+var target = event.target;
+event.target.classList.add(selector)
+event.target.removeEventListner(click, simonColors)
 }
+
+
+
 
 var newRound = function() {
 
 };
 
 
-var startGame = document.getElementById('startButton')
-var beginGame = 
 
 
 
 
-var resetButton = document.getElementById('reset')
-var clearBoard = function(){
+
+
+
+
+
+var resetButton = document.getElementById('reset');
+var clearGame = function(){
 	location.reload();
 };
 
 
-startButton.addEventListener('click', );
+startButton.addEventListener('click', badMoveAlert);
+var badMoveAlert = function() {
+	alert ("Buuuh!! Wrong move, mate");
+}; 
+resetButton.addEventListener('click', clearGame);
 
-redSquare.addEventListener('click', clickSquare);
-greenSquare.addEventListener('click', clickSquare);
-blueSquare.addEventListener('click', clickSquare);
-yellowSquare.addEventListener('click', clickSquare);
+redSquare.addEventListener('click', redSquare);
+greenSquare.addEventListener('click', greenSquare);
+blueSquare.addEventListener('click', blueSquare);
+yellowSquare.addEventListener('click', yellowSquare);
+
+
+
 
 
 	
