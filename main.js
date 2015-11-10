@@ -1,15 +1,15 @@
 console.log('main.js is linked!');
-var redSquare = document.getElementById('red-box');
-var blueSquare = document.getElementById('blue-box');
-var yellowSquare = document.getElementById('yellow-box');
-var greenSquare = document.getElementById('green-box');
+var red = document.getElementById('red-box');
+var blue = document.getElementById('blue-box');
+var yellow = document.getElementById('yellow-box');
+var green = document.getElementById('green-box');
 var startButton = document.getElementById('start-button');
 var resetButton = document.getElementById('restart-button');
-var simonColors = [redSquare, blueSquare, yellowSquare, greenSquare];
+var simonColors = [blue, green, yellow, red];
 
 var flashColor = function() {
-	setTimeout(userMoves())
-}
+	setTimeout(userMoves());
+};
 
 // var gameMoves = {
 // 	moves: [],
@@ -21,41 +21,98 @@ var computerMoves = [];
 
 var userMoves = [];
 
-var randomChoice = Math.random();
+var rightMoves = [];
+
+
 
 var randomColor = function() {
-	if (randomChoice < 0.26) {
-		return computerMove.push(redSquare);
-	} else if (randomChoice > 0.25 && randomChoice < 0.51) {
-		return computerMove.push(blueSquare);
-	} else if (randomChoice > 0.50 && randomChoice < 0.76) {
-		return computerMove.push(greenSquare);
-	} else {
-        return computerMove.push(yellowSquare);
-	}
-
+// pick random color and put in computermoves
+  var randomIndex = Math.floor(Math.random() * simonColors.length);
+  return simonColors[randomIndex];
 };
 
-// compareMoves = function(); {
-// 	if (computerMoves === userMoves)
-// 		return true;
-//     } else {
-//     	return false;
-//     }
 
+
+var flashColor = function() {
+	var color = randomColor();
+	computerMoves.push(color);
+	color.classList.add('active');
+	window.setTimeout(function() {
+	  color.classList.remove('active');
+    }, 5000)
+  };
+
+
+  var redClick = function() {
+  	red.classList.add('active');
+	window.setTimeout(function() {
+	red.classList.remove('active');
+    }, 5000)
+    userMoves.push(red);
+  };
+
+  var blueClick = function() {
+  	blue.classList.add('active');
+  	window.setTimeout(function() {
+  	blue.classList.remove('active');
+  	}, 5000)
+  	userMoves.push(blue);
+  };
+  
+  var greenClick = function() {
+  	green.classList.add('active');
+  	window.setTimeout(function() {
+  	green.classList.remove('active');
+  	}, 5000)
+  	userMoves.push(green);
+  };
+
+  var yellowClick = function() {
+  	yellow.classList.add('active');
+  	window.setTimeout(function() {
+  	yellow.classList.remove('active');
+  	}, 5000)
+  	userMoves.push(yellow);
+  };
+
+  userInteraction = function() {
+  	yellowClick;
+  	redClick;
+  	blueClick;
+  	greenClick;
+  };
+
+compareMoves = function() {
+	if (computerMoves[0] === userMoves[0]) {
+		return trialAlert;
+	} else {
+		return badMoveAlert;
+	};
+};
+
+
+	// for (var i in computerMoves) {
+	// 	for (var j in userMoves) {
+	// 		if (computerMoves[i] == userMoves[j]) {
+	// 			return trialAlert;
+	// 		};
+	// 	};
+	// };
+
+// finalCompare = function() {
+// 	if (compareMoves === true) {
+// 		return trialAlert;
+// 	} else {
+// 		return badMoveAlert;
+// 	};
 // };
 
-// var userInteraction = function(); {
-// 	if (redSquare.addEventListener('click', redSquare === true)
-// 		return userMoves.push(redSquare);
-// 	} else if (greenSquare.addEventListener('click', greenSquare === true) {
-// 		return userMoves.push(greenSquare);
-// 	} else if (yellowSquare.addEventListener('click', yellowSquare === true) {
-// 		return userMoves.push(yellowSquare);
-// 	} else if (blueSquare.addEventListener('click', blueSquare === true) {
-// 		return userMoves.push(blueSquare);
-// 	}
-// };
+
+
+
+	
+
+
 
 
 
@@ -82,12 +139,15 @@ var clearGame = function(){
 	location.reload();
 };
 
-var startGameAlert = function() {
+var startGame = function() {
 	window.alert("The game Consists of 4 boxes containing diferrent colors, the computer selecs randomlly a color and is up to the user to remember and select the color. The computer will continue to select new Colors depending if the User sucessfully selects them.");
-}
+	flashColor();
+    
+};
 
 var badMoveAlert = function() {
 	window.alert("Buuuh!! Wrong move, mate! Try Again!!");
+	clearGame();
 }; 
 
 var trialAlert = function() {
@@ -98,15 +158,32 @@ var trialAlert = function() {
 
 
 
-startButton.addEventListener('click', startGameAlert);
+startButton.addEventListener('click', startGame);
 
 resetButton.addEventListener('click', badMoveAlert);
 
-redSquare.addEventListener('click', trialAlert);
-greenSquare.addEventListener('click', greenSquare);
-blueSquare.addEventListener('click', blueSquare);
-yellowSquare.addEventListener('click', yellowSquare);
+red.addEventListener('click', redClick);
 
+blue.addEventListener('click', blueClick);
+
+green.addEventListener('click', greenClick);
+
+yellow.addEventListener('click', yellowClick);
+
+gamePlay = [flashColor, userInteraction, compareMoves, computersMovesLoop];
+
+var gameLoop = function() {
+	for (i = 0; i < gamePlay.length; i++) {
+		console.log(gameLoop[i]);
+     };
+  };
+
+var computersMovesLoop = function() {
+	var index;
+	for (index = 0; i < computerMoves.length; index++) {
+		return computersMovesLoop[index] + flashColor;
+    };
+};
 
 
 
